@@ -122,6 +122,8 @@ class WiFiManager
     void          setCustomHeadElement(const char* element);
     //if this is true, remove duplicated Access Points - defaut true
     void          setRemoveDuplicateAPs(boolean removeDuplicates);
+    // set port number for configration portal
+    void          setPortalPort(uint port);
 
   private:
     std::unique_ptr<DNSServer>        dnsServer;
@@ -146,6 +148,7 @@ class WiFiManager
     unsigned long _configPortalTimeout    = 0;
     unsigned long _connectTimeout         = 0;
     unsigned long _configPortalStart      = 0;
+    uint          _port                   = 0;
 
     IPAddress     _ap_static_ip;
     IPAddress     _ap_static_gw;
